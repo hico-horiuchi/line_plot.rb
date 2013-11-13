@@ -20,7 +20,7 @@ Gnuplot.open do |gp|
 
     ARGV.each do |file|
       y = []
-      File.open(file).each_line do |line|
+      File.open(File.expand_path(file)).each_line do |line|
         y << line.to_f
       end
       x = (0..y.size - 1).collect {|v| v.to_i}
